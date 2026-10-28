@@ -481,11 +481,11 @@ discussed, but the scheduling policy is not finalized.
 ```mermaid
 flowchart TD
     Start([Start Diagnostic]) --> Init[Initialize x = 1, c = 0, n = topic count]
-    Init --> Choose[Choose topic f(x) = min(x² + c, n)]
+    Init --> Choose["Choose topic f(x) = min(x² + c, n)"]
     Choose --> Ask[Ask diagnostic question or questions]
     Ask --> Result{Topic test result}
     Result -- Pass / continue search --> Advance[Advance traversal position]
-    Result -- Fail --> Narrow[Set c = f(x - 1); n = f(x) - 1; reset x = 1]
+    Result -- Fail --> Narrow["Set c = f(x - 1); n = f(x) - 1; reset x = 1"]
     Advance --> Terminate{Budget exhausted or terminal condition?}
     Narrow --> Terminate
     Terminate -- No --> Choose
